@@ -7,7 +7,7 @@ const PriceFilter = () => {
 
   const handlePriceChange = (e) => {
     const value = e.target.value;
-    setFilter('price', value === '' ? '' : parseFloat(value));
+    setFilter('price', value);
   };
 
   return (
@@ -16,17 +16,15 @@ const PriceFilter = () => {
         Filter by Price
       </label>
       <Input
-        type="number"
-        placeholder="Enter price..."
+        type="text"
+        placeholder="Enter price (e.g., 42, 42.29)..."
         value={filters.price}
         onChange={handlePriceChange}
         className="w-full"
-        min="0"
-        step="0.01"
       />
       {filters.price && (
         <p className="text-xs text-gray-500">
-          Price: ${filters.price}
+          Searching for prices containing: "{filters.price}"
         </p>
       )}
     </div>

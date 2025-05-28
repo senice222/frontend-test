@@ -32,7 +32,7 @@ export const buildProductsParams = (filters = {}) => {
   }
 
   if (filters.price) {
-    params.price = filters.price;
+    params.price_like = filters.price;
   }
 
   if (filters.subscription !== undefined) {
